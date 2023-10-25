@@ -20,16 +20,21 @@ void loop()
   long t; //timepo que demora en llegar el eco
   long d; //distancia en centimetros
   digitalWrite(Trigger2, HIGH);
-  digitalWrite(Trigger, HIGH);
-  delayMicroseconds(10);          //Enviamos un pulso de 10us
-  digitalWrite(Trigger, LOW);
   digitalWrite(Trigger2,LOW);
+  delayMicroseconds(10); 
+  
+  t2 = pulseIn(Echo2, HIGH);
+  d2 = t2/59;
+  Serial.println(d2);
+
+  digitalWrite(Trigger, HIGH);
+  //Enviamos un pulso de 10us
+  digitalWrite(Trigger, LOW);
+  delayMicroseconds(10);
   
   t = pulseIn(Echo, HIGH); //obtenemos el ancho del pulso
   d = t/59;             //escalamos el tiempo a una distancia en cm
-  t2 = pulseIn(Echo2, HIGH);
-  d2 = t2/59;
-  Serial.println(d);
+  Serial.println(d); 
 
 
 }
