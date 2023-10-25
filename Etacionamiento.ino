@@ -20,8 +20,9 @@ void loop()
   long t; //timepo que demora en llegar el eco
   long d; //distancia en centimetros
   digitalWrite(Trigger2, HIGH);
+  delayMicroseconds(10);
   digitalWrite(Trigger2,LOW);
-  delayMicroseconds(10); 
+   
   
   t2 = pulseIn(Echo2, HIGH);
   d2 = t2/59;
@@ -29,8 +30,9 @@ void loop()
 
   digitalWrite(Trigger, HIGH);
   //Enviamos un pulso de 10us
-  digitalWrite(Trigger, LOW);
   delayMicroseconds(10);
+  digitalWrite(Trigger, LOW);
+  
   
   t = pulseIn(Echo, HIGH); //obtenemos el ancho del pulso
   d = t/59;             //escalamos el tiempo a una distancia en cm
