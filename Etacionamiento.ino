@@ -4,6 +4,8 @@ const int Echo = 9;   //Pin digital 3 para el Echo del sensor
 const int Trigger2 = 2;   //Pin digital  para el Trigger del sensor
 const int Echo2 = 3;   //Pin digital 3 para el Echo del sensor
 int lugares_desocupados = 2;
+int lugar1 = 0;
+int lugar2 = 0;
 
 void setup() {
   Serial.begin(2400);//iniciailzamos la comunicación
@@ -21,6 +23,7 @@ void loop()
   long d2;
   long t; //timepo que demora en llegar el eco
   long d; //distancia en centimetros
+  lugares_desocupados = 2;
   digitalWrite(Trigger2, HIGH);
   delayMicroseconds(10);
   digitalWrite(Trigger2,LOW);
@@ -38,6 +41,9 @@ void loop()
   
   t = pulseIn(Echo, HIGH); //obtenemos el ancho del pulso
   d = t/59;             //escalamos el tiempo a una distancia en cm
+
+
+
    if (d < 50) 
    {
     lugares_desocupados -= 1;
