@@ -42,9 +42,12 @@ void loop()
    {
     lugares_desocupados -= 1;
    }
+  
+   
 if (d2< 50) 
    {
     lugares_desocupados -= 1;
    }
-
+Serial.println(lugares_desocupados);
+delay(1000);
 }
