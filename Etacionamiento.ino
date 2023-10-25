@@ -4,7 +4,7 @@ const int Echo = 9;   //Pin digital 3 para el Echo del sensor
 const int Trigger2 = 2;   //Pin digital  para el Trigger del sensor
 const int Echo2 = 3;   //Pin digital 3 para el Echo del sensor
 void setup() {
-  Serial.begin(9600);//iniciailzamos la comunicación
+  Serial.begin(2400);//iniciailzamos la comunicación
   pinMode(Trigger, OUTPUT); //pin como salida
   pinMode(Echo, INPUT);  //pin como entrada
   digitalWrite(Trigger, LOW);//Inicializamos el pin con 0
@@ -37,6 +37,6 @@ void loop()
   t = pulseIn(Echo, HIGH); //obtenemos el ancho del pulso
   d = t/59;             //escalamos el tiempo a una distancia en cm
   Serial.println(d); 
-
+delay(2000);
 
 }
