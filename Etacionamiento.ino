@@ -30,6 +30,6 @@ void loop()
   t2 = pulseIn(Echo2, HIGH);
   d2 = t2/59;
   Serial.println(d);
-;
+
 
 }
